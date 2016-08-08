@@ -5,11 +5,11 @@ $(function () {
 		self.files = parameters[0].listHelper;
 		self.FileList = ko.observableArray();
 		self.RenderModes = ko.observableArray([{
-						name : 'render as smooth',
-						value : 'smooth'
-					}, {
 						name : 'render as flat',
 						value : 'flat'
+					}, {
+						name : 'render as smooth',
+						value : 'smooth'
 					}, {
 						name : 'render as wireframe',
 						value : 'wireframe'
@@ -51,13 +51,13 @@ $(function () {
 		self.onBeforeBinding = function () {
 			self.FileList(_.filter(self.files.allItems, self.files.supportedFilters["model"]));
 			self.viewer.setParameter('SceneUrl', '');
-			self.viewer.setParameter('InitRotationX', 20);
+			self.viewer.setParameter('InitRotationX', -80);
 			self.viewer.setParameter('InitRotationY', 20);
 			self.viewer.setParameter('InitRotationZ', 0);
 			self.viewer.setParameter('ModelColor', '#CAA618');
-			self.viewer.setParameter('BackgroundColor1', '#000000');
-			self.viewer.setParameter('BackgroundColor2', '#6A6AD4');
-			self.viewer.setParameter('RenderMode', 'smooth');
+			self.viewer.setParameter('BackgroundColor1', '#FFFFFF');
+			self.viewer.setParameter('BackgroundColor2', '#FFFFFF');
+			self.viewer.setParameter('RenderMode', 'flat');
 			self.viewer.setParameter('ProgressBar', 'on');
 			self.viewer.init();
 			self.viewer.update();
